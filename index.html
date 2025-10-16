@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistente DJEN - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Assistente de Intimações (DJEN)</h1>
+    </header>
+
+    <main>
+        <nav class="abas">
+            <button class="aba-link active" data-aba="pendentes">
+                <i class="fas fa-inbox"></i> Novas Intimações
+            </button>
+            <button class="aba-link" data-aba="pesquisa">
+                <i class="fas fa-search"></i> Pesquisar no DJEN
+            </button>
+            <button class="aba-link" data-aba="arquivo">
+                <i class="fas fa-archive"></i> Meu Arquivo
+            </button>
+        </nav>
+
+        <section id="pendentes" class="aba-conteudo active">
+            <div class="cabecalho-secao">
+                <h2><i class="fas fa-bell"></i> Pendentes de Análise</h2>
+                <div class="acoes">
+                    <button id="btn-marcar-salvar"><i class="fas fa-check-double"></i> Arquivar Selecionadas</button>
+                </div>
+            </div>
+            <div id="lista-pendentes">
+                <p>Carregando intimações pendentes...</p>
+            </div>
+        </section>
+
+        <section id="pesquisa" class="aba-conteudo">
+            <h2><i class="fas fa-search"></i> Pesquisar na Plataforma DJEN</h2>
+
+            <div class="container-pesquisa">
+                <div class="mapa-container" id="mapa-placeholder">
+                    </div>
+
+                <div class="opcoes-container">
+                    <div id="tribunais-container">
+                        </div>
+                    <div class="form-container">
+                        <h3 class="form-titulo">Refinar Pesquisa</h3>
+                        <div class="form-pesquisa-refinada">
+                            <input type="hidden" id="pesquisa-tribunal-selecionado">
+                            <div class="campo-form">
+                                <label for="pesquisa-oab">Nº OAB (somente números)</label>
+                                <input type="text" id="pesquisa-oab" value="86937">
+                            </div>
+                            <div class="campo-form">
+                                <label for="pesquisa-uf">UF</label>
+                                <input type="text" id="pesquisa-uf" value="RS" maxlength="2" style="text-transform:uppercase;" readonly>
+                            </div>
+                            <div class="campo-form">
+                                <label for="pesquisa-data-inicio">Data Início</label>
+                                <input type="date" id="pesquisa-data-inicio">
+                            </div>
+                            <div class="campo-form">
+                                <label for="pesquisa-data-fim">Data Fim</label>
+                                <input type="date" id="pesquisa-data-fim">
+                            </div>
+                            <div class="campo-form-botao">
+                                <button id="btn-pesquisar-api">
+                                    <i class="fas fa-search"></i> Pesquisar Agora
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="resultados-pesquisa-api" class="resultados-container">
+                </div>
+        </section>
+
+        <section id="arquivo" class="aba-conteudo">
+            <h2><i class="fas fa-archive"></i> Pesquisar no Meu Arquivo</h2>
+
+            <div class="form-pesquisa">
+                <div class="campo-form" style="grid-column: 1 / 3;">
+                    <label for="arquivo-termo-busca">Buscar por Nº do Processo, Órgão, ou conteúdo</label>
+                    <input type="text" id="arquivo-termo-busca" placeholder="Digite um termo para buscar...">
+                </div>
+                <div class="campo-form">
+                    <label for="arquivo-data-inicio">De:</label>
+                    <input type="date" id="arquivo-data-inicio">
+                </div>
+                <div class="campo-form">
+                    <label for="arquivo-data-fim">Até:</label>
+                    <input type="date" id="arquivo-data-fim">
+                </div>
+                <div class="campo-form-botao">
+                    <button id="btn-pesquisar-arquivo">
+                        <i class="fas fa-search"></i> Pesquisar no Arquivo
+                    </button>
+                </div>
+            </div>
+            <div id="resultados-arquivo" class="resultados-container">
+                </div>
+            </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+</html>

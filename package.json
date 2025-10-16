@@ -1,0 +1,50 @@
+{
+  "name": "monitaramento-djen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "supabase": "^2.51.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.75.0",
+    "agent-base": "^7.1.4",
+    "bin-links": "^5.0.0",
+    "chownr": "^3.0.0",
+    "cmd-shim": "^7.0.0",
+    "data-uri-to-buffer": "^4.0.1",
+    "debug": "^4.4.3",
+    "fetch-blob": "^3.2.0",
+    "formdata-polyfill": "^4.0.10",
+    "https-proxy-agent": "^7.0.6",
+    "imurmurhash": "^0.1.4",
+    "minipass": "^7.1.2",
+    "minizlib": "^3.1.0",
+    "ms": "^2.1.3",
+    "node-domexception": "^1.0.0",
+    "node-fetch": "^3.3.2",
+    "npm-normalize-package-bin": "^4.0.0",
+    "proc-log": "^5.0.0",
+    "read-cmd-shim": "^5.0.0",
+    "signal-exit": "^4.1.0",
+    "tar": "^7.5.1",
+    "web-streams-polyfill": "^3.3.3",
+    "write-file-atomic": "^6.0.0",
+    "yallist": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegorsvargas/Monitoramento-prazos-Djen.git"
+  },
+  "bugs": {
+    "url": "https://github.com/diegorsvargas/Monitoramento-prazos-Djen/issues"
+  },
+  "homepage": "https://github.com/diegorsvargas/Monitoramento-prazos-Djen#readme"
+}
